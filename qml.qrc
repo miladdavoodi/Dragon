@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Logo.qml</file>
+        <file>image/logo_rec3.png</file>
+        <file>image/logo_rec3@2x.png</file>
+        <file>image/logo_rec2.png</file>
+        <file>image/logo_rec2@2x.png</file>
+        <file>image/logo_rec1.png</file>
+        <file>image/logo_rec1@2x.png</file>
+        <file>image/logo_bg.png</file>
+        <file>image/logo_bg@2x.png</file>
+        <file>image/logotype_sub.png</file>
+        <file>image/logotype_sub@2x.png</file>
+        <file>image/logotype.png</file>
+        <file>image/logotype@2x.png</file>
+        <file>Register.qml</file>
+        <file>image/register.png</file>
+        <file>image/register@2x.png</file>
+        <file>Msgbox.qml</file>
+        <file>image/search.png</file>
+        <file>image/search@2x.png</file>
+        <file>image/settings.png</file>
+        <file>image/settings@2x.png</file>
+        <file>image/new.png</file>
+        <file>image/new@2x.png</file>
+        <file>Chat.qml</file>
+        <file>image/send.png</file>
+        <file>image/send@2x.png</file>
+        <file>Cryptography.js</file>
+    </qresource>
+</RCC>
