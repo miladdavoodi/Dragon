@@ -78,14 +78,6 @@ Item {
 
     ListModel {
         id:modelmsg
-         ListElement {
-             name: "YOU"
-             msg: "امروز یادت باشه ساعت چهار جلسه داریم یک آلارم روی گوشیت بزار فراموش نکنی ..امروز یادت باشه ساعت چهار جلسه داریم یک آلارم روی گوشیت بزار فراموش نکنی .."
-         }
-         ListElement {
-             name: "@irn24cn"
-             msg: "سلام باشه حتما یادم میمونه ساعت ۳و نیم خودمو میرسونم"
-         }
      }
 
     ListView {
@@ -220,19 +212,63 @@ Item {
                 onClicked: {
                     btnanim.restart();
 
-                    var key = "m123m";
+                    var key = keypin;
 
                     if(textmsg.text.length>0){
+
+
                         modelmsg.append({name:"@irn24cn",msg:textmsg.text});
 
 
+                        //+'^^^::^^^'+Cryptography.makeid()
                         var message = textmsg.text;
                         var ciphertext = Cryptography.des (key, message, 1, 0);
-                        modelmsg.append({name:"@Cryptography",msg:Cryptography.stringToHex (ciphertext)});
+                        modelmsg.append({name:"@irn24cn_Cryptography",msg:Cryptography.stringToHex (ciphertext)});
                         textmsg.text = "";
                         textmsg.forceActiveFocus();
+
+                        // http ****************
+
+                        var msg = Cryptography.stringToHex (ciphertext);
+
+                        var http = new XMLHttpRequest()
+                        var url = "http://call.simakalapouya.com:2780/test2.php";
+                        var params = "msg="+msg;
+                        http.open("POST", url, true);
+
+                        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        http.setRequestHeader("Content-length", params.length);
+                        http.setRequestHeader("Connection", "close");
+
+                        http.onreadystatechange = function() {
+                            if (http.readyState == 4) {
+                                if (http.status == 200) {
+                                    console.log(http.responseText);
+                                    var obj = JSON.parse(http.responseText);
+
+                                    //keypin = obj.key;
+                                    modelmsg.append({name:"YOU",msg:http.responseText});
+                                    listw.currentIndex = modelmsg.count - 1;
+
+
+                                } else {
+                                    console.log("error: " + http.status)
+                                }
+                            }
+                        }
+                        http.send(params);
+
+                        // http | end **********
+
+                        listw.currentIndex = modelmsg.count - 1;
+
+
+                    }else{
+                        cryptographybox = true;
                     }
-                    listw.currentIndex = modelmsg.count - 1;
+
+
+
                 }
             }
         }

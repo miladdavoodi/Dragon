@@ -9,6 +9,13 @@ Window {
     color: '#060606'
     title: qsTr("Dragon")
 
+    property string keypin: "m12uncsd9e4tib3n"
+    property bool cryptographybox: false;
+
+    onKeypinChanged: {
+        console.log('KeypinChanged ::'+keypin);
+    }
+
 
     Item {
         id:root
@@ -69,6 +76,10 @@ Window {
         Chat{
             id:chat_page
             visible: false
+        }
+
+        Cryptography{
+
         }
 
     }
