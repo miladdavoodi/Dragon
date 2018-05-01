@@ -7,6 +7,9 @@ Git LFS. If you have an idea for a new feature, open an issue for discussion.
 
 | | Name | Ref |
 | ------ | ---- | --- |
+| | Conduct an encrypted conversation process on chat page | |  
+| | Exchange of information between the host and the host server | | 
+
 
 
 ## Upcoming Features
