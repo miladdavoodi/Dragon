@@ -28,5 +28,10 @@
         <file>image/send.png</file>
         <file>image/send@2x.png</file>
         <file>Cryptography.js</file>
+        <file>Cryptography.qml</file>
+        <file>image/lock.png</file>
+        <file>image/lock@2x.png</file>
+        <file>image/Cryptography.png</file>
+        <file>image/Cryptography@2x.png</file>
     </qresource>
 </RCC>
